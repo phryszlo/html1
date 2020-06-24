@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HELLO</title>
-  <script src="http://code.onion.com/fartscroll.js">why is there inner html in a skript tag?</script>
+  <script src="http://code.onion.com/fartscroll.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  
+  <!-- <script src="fartscroll.js"></script> -->
+  <script>
+      $(document).ready(function () {
+        // Ensure the page always has more scrolling
+        $(document).scroll(function () {
+          while ((window.pageYOffset + window.innerHeight) >= $(this).height() - (window.innerHeight / 2)) {
+            $('ul').append('<li>Testing.</li>');
+          }
+        }).scroll();
 
+        fartscroll(800);
+      });
+  </script>
 </head>
+
 <body>
   HI
 </body>
+
 </html>
